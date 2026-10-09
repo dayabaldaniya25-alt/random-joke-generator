@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Joke Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>😂 Joke Generator</h1>
+      <p class="subtitle">Get a laugh with random jokes from JokeAPI</p>
+    </header>
+
+    <div class="controls-section">
+      <select id="categorySelect" class="category-select">
+        <option value="Any">Any Category</option>
+        <option value="General">General</option>
+        <option value="Programming">Programming</option>
+        <option value="Knock-Knock">Knock-Knock</option>
+        <option value="Dark">Dark</option>
+        <option value="Pun">Pun</option>
+        <option value="Spooky">Spooky</option>
+      </select>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="safeMode" checked>
+        Safe Mode (No Explicit Content)
+      </label>
+
+      <button id="generateBtn" class="generate-btn">Generate Joke</button>
+    </div>
+
+    <div id="jokeContainer" class="joke-container hidden">
+      <div class="joke-card">
+        <div class="joke-category" id="jokeCategory"></div>
+        
+        <div class="joke-content">
+          <p id="jokeSetup" class="joke-setup"></p>
+          <p id="jokeDelivery" class="joke-delivery hidden"></p>
+        </div>
+
+        <div class="joke-flags" id="jokeFlags"></div>
+
+        <button id="showAnswerBtn" class="show-answer-btn">Show Punchline</button>
+      </div>
+    </div>
+
+    <div id="loadingSpinner" class="loading-spinner hidden">
+      <div class="spinner"></div>
+      <p>Loading joke...</p>
+    </div>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+
+    <div class="history-section">
+      <h3>Recent Jokes</h3>
+      <ul id="historyList" class="history-list">
+        <li class="empty-history">No jokes yet. Generate one!</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
